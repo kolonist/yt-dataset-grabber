@@ -51,7 +51,7 @@ if __name__ == "__main__":
             if etalon["id"] == test["id"]:
                 etalon_year = int(etalon["year"])
                 test_year = int(test["year"])
-                distance = abs(etalon_year - test_year)
+                distance = etalon_year - test_year
 
                 if distance not in very_tests:
                     continue
@@ -72,6 +72,6 @@ if __name__ == "__main__":
 
     # save protocols
     for (distance, very_test) in very_tests.items():
-        filename = os.path.join(rootdir, f"very_test{distance}.txt")
+        filename = os.path.join(rootdir, f"veri_test{distance}.txt")
         with open(filename, "w") as f:
             f.writelines(very_test)
